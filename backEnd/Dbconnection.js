@@ -1,25 +1,16 @@
 const mysql = require('mysql2');
 
-var con = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'SGEP'  // banco de dados SGEP, que será usado para a conexão inicial
+const connection = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD || '',  // Usando uma senha em branco, se não definida
+  database: process.env.DB_NAME
 });
 
-con.connect(function(err) {
+connection.connect((err) => {
   if (err) {
-    console.error('Error connecting to the database:', err);
+    console.error('Database connection error: ', err.stack);
     return;
   }
-  console.log("Connected!");
-
-  // Tente criar o banco de dados TMEDB
-  con.query("CREATE DATABASE IF NOT EXISTS TMEDB", function (err, result) {
-    if (err) {
-      console.error('Error creating database:', err);
-      return;
-    }
-    console.log("Database created or already exists");
-  });
+  console.log('Connected to the database!');
 });

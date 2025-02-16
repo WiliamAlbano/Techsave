@@ -1492,6 +1492,16 @@ app.get('/gerar-pdf/:id', (req, res) => {
 
 
 // Start the server
+require('dotenv').config(); 
+
+// Usa a variável de ambiente PORT ou 3000 como padrão
+const port = process.env.PORT || 3000;
+
+// Configuração das rotas e outros middlewares
+app.get('/', (req, res) => {
+  res.send('Olá, mundo!');
+});
+
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
