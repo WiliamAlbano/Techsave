@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/Admin.css">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="logo">TECHSAVE</span>
+        <ul class="menu">
+            <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('cliente')">Clientes</a></li>
+            <li><a href="#" onclick="showSection('tecnicos')">Técnicos</a></li>
+            <li><a href="#" onclick="showSection('atendentes')">Atendentes</a></li>
+            <li><a href="#" onclick="showSection('categoria')">Categoria</a></li>
+            <li><a href="#" onclick="showSection('equipamentos')">Equipamentos</a></li> 
+            <li><a href="#" onclick="showSection('relatorio')">Relatório</a></li>
+        </ul>
+        <button class="add-admin" onclick="window.location.href='./AdminSignup.html'">Add Outro Admin</button>
+        <button class="logout">SAIR</button>
+    </nav>
+    
+    <section id="home" class="content">
+        <h2>Dashboard</h2>
+        <p>Bem-vindo ao painel administrativo.</p>
+    </section>
+    
+    <section id="cliente" class="content" style="display: none;">
+        <h2>Clientes Registrados</h2>
+        <table id="clientes-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Contacto</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2>Solicitações</h2>
+        <table id="solicitacoes-table">
+            <thead>
+                <tr>
+                    <th>Localização</th>
+                    <th>Solicitador</th>
+                    <th>Equipamento</th>
+                    <th>Preço</th>
+                    <th>Status</th>
+                    <th>Data</th>
+                    <th>DataM</th>
+                    <th>Serviço</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+    </section>
+
+    <section id="tecnicos" class="content" style="display: none;">
+        <h2>Gerenciar Técnicos</h2>
+        <form id="tecnico-form">
+            <input type="hidden" id="tecnico-id">
+            <input type="text" id="nome" placeholder="Nome" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="contacto" placeholder="Contato" required>
+            <button type="submit">Salvar Técnico</button>
+        </form>
+        
+        <h2>Técnicos Registrados</h2>
+        <table id="tecnicos-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Contato</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <table id="vendas-table">
+            <thead>
+                <tr>
+                    <th>Solicitador</th>
+                    <th>Equipamento</th>
+                    <th>Atendente</th>
+                    <th>Técnico</th>
+                    <th>Data</th>
+                    <th>Localização</th>
+                    <th>Data Modificada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As vendas serão carregadas aqui -->
+            </tbody>
+        </table>
+        
+    </section>
+
+    <section id="atendentes" class="content" style="display: none;">
+        <h2>Gerenciar Atendentes</h2>
+        <form id="addAtendenteForm">
+            <form id="addAtendenteForm">
+                <input type="text" id="nomeAtendente" name="nome" placeholder="Nome">
+                <input type="email" id="emailAtendente" name="email" placeholder="Email">
+                <input type="text" id="contactoAtendente" name="contacto" placeholder="Contacto">
+                <button type="submit">Adicionar</button>
+            </form>
+            
+        </form>
+
+        <h2>Lista de Atendentes</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Contato</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="atendentesTable"></tbody>
+        </table>
+    </section>
+
+    <section id="categoria" class="content" style="display: none;">
+        <h2>Gerenciar Categorias</h2>
+        <input type="text" id="categoriaNome" placeholder="Nome da Categoria">
+        <button onclick="adicionarCategoria()">Adicionar</button>
+
+        <h2>Lista de Categorias</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="categoriasLista">
+
+        </tbody>
+    </table>
+    <div id="equipamentoss">
+
+    </div>
+    </section>
+
+    <section id="equipamentos" class="content" style="display: none;">
+        <h2>Gerenciar Equipamentos</h2>
+        <form id="addEquipamentoForm">
+            <input type="text" id="nomenclatura" placeholder="Nome" required>
+            <input type="number" id="preco" placeholder="Preço">
+            <input type="number" id="qtd" placeholder="Quantidade" required>
+            <input type="text" id="cor" placeholder="Cor">
+            <input type="text" name="Compatibilidade" placeholder="Compatibilidade">
+            <input type="text" name="RAM" placeholder="RAM">
+            <input type="text" name="ROM" placeholder="ROM">
+            <input type="text" name="Comprimento" placeholder="Comprimento">
+            <input type="text" name="WIFI" placeholder="WIFI">
+            <input type="text" name="SO" placeholder="SISTEMA OPERATIVO">
+            <input type="text" name="Ethernet" placeholder="Ethernet">
+            <input type="text" name="Resolucao" placeholder="Resolução">
+            <input type="text" name="Grafico" placeholder="Gráfico">
+            <input type="text" name="HDMI" placeholder="HDMI">
+            <input type="text" name="USB" placeholder="USB">
+            <input type="text" name="Bluetooth" placeholder="Bluetooth">
+            <input type="text" name="Processador" placeholder="Processador">
+            <input type="text" name="Garantia" placeholder="Garantia">
+            
+            <!-- Dropdown de categorias -->
+            <label for="categoriaId">Categoria:</label>
+            <select id="categoriaId" required>
+                <option value="">Selecione uma categoria</option>
+            </select>
+            
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <h2>Lista de Equipamentos</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Categoria</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="equipamentosTable"></tbody>
+        </table>
+    </section>
+
+    <section id="relatorio" class="content" style="display: none;">
+        <h1>Relatórios</h1>
+
+        <h2>Vendas por Equipamento</h2>
+        <select id="equipamentoSelect" onchange="carregarVendasPorEquipamento()">
+            <option value="">Selecione um equipamento</option>
+        </select>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Solicitador</th>
+                    <th>Equipamento</th>
+                    <th>Preço</th>
+                    <th>Atendente</th>
+                    <th>Técnico</th>
+                    <th>Data de solicitação</th>
+                    <th>Localização</th>
+                    <th>Data de Montagem</th>
+                    <th>Status</th>
+                    <th>service</th>
+                </tr>
+            </thead>
+            <tbody id="vendasTableBody"></tbody>
+        </table>
+
+        <h2>Total de Vendas</h2>
+        <p id="totalVendas"></p>
+
+        <h2>Gráfico de Vendas por Técnico</h2>
+        <canvas id="graficoVendasTecnico"></canvas>
+
+        <h2>Solicitações</h2>
+        <p>Total de Solicitações: <span id="totalSolicitacoes"></span></p>
+        <p>Solicitações Pendentes: <span id="solicitacoesPendentes"></span></p>
+        <p>Solicitações Em Curso: <span id="solicitacoesEmCurso"></span></p>
+        <p>Solicitações Concluídas: <span id="solicitacoesConcluidas"></span></p>
+
+        <h2>Lista de Solicitações</h2>
+        <table id="solicitacoes-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Solicitador</th>
+                    <th>Email</th>
+                    <th>Equipamento</th>
+                    <th>Preço</th>
+                    <th>Serviço</th>
+                    <th>Status</th>
+                    <th>Data</th>
+                    <th>Localização</th>
+                </tr>
+            </thead>
+            <tbody id="solicitacoesTableBody2"></tbody>
+        </table>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../backEnd/Admin.js"></script>
+</body>
+</html>

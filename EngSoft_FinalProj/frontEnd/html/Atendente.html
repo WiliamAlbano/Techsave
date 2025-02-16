@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSave</title>
+    <link rel="stylesheet" href="../css/Atendente.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul class="menu">
+            <li><a href="#" onclick="showSection('solicitacoes', this)" class="active">Solicitações</a></li>
+            <li><a href="#" onclick="showSection('equipamentos', this)">Equipamentos</a></li>
+            <li><a href="#" onclick="showSection('perfil', this)">Perfil</a></li>
+        </ul>
+        <button class="logout" onclick="logout()">Sair</button>
+    </div>
+
+    <main>
+        <!-- Seção de Solicitações -->
+        <section id="solicitacoes" class="content">
+            <h2>Lista de Solicitações</h2>
+            <table id="solicitacoesTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>SOLICITADOR</th>
+                        <th>Email</th>
+                        <th>Equipamento</th>
+                        <th>Preço</th>
+                        <th>Data de solicitação</th>
+                        <th>Data de Montagem</th>
+                        <th>Localização</th>
+                        <th>Serviço</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+    <!-- Seção de Equipamentos -->
+    <section id="equipamentos" class="content hidden">
+        <h2>Gerenciar Equipamentos</h2>
+        <form id="addEquipamentoForm">
+            <input type="text" name="nomenclatura" placeholder="Nome" required>
+            <input type="number" name="preco" placeholder="Preço">
+            <input type="number" name="qtd" placeholder="Quantidade">
+            <input type="text" name="Cor" placeholder="Cor">
+            <input type="text" name="Compatibilidade" placeholder="Compatibilidade">
+            <input type="text" name="RAM" placeholder="RAM">
+            <input type="text" name="ROM" placeholder="ROM">
+            <input type="text" name="Comprimento" placeholder="Comprimento">
+            <input type="text" name="WIFI" placeholder="WIFI">
+            <input type="text" name="SO" placeholder="SISTEMA OPERATIVO">
+            <input type="text" name="Ethernet" placeholder="Ethernet">
+            <input type="text" name="Resolucao" placeholder="Resolução">
+            <input type="text" name="Grafico" placeholder="Gráfico">
+            <input type="text" name="HDMI" placeholder="HDMI">
+            <input type="text" name="USB" placeholder="USB">
+            <input type="text" name="Bluetooth" placeholder="Bluetooth">
+            <input type="text" name="Processador" placeholder="Processador">
+            <input type="text" name="Garantia" placeholder="Garantia">
+            <!-- Dropdown de categorias -->
+            <label for="categoriaId">Categoria:</label>
+            <select id="categoriaId" required>
+                <option value="">Selecione uma categoria</option>
+            </select>
+
+            <button type="button" onclick="addEquipamento()">Adicionar Equipamento</button>
+        </form>
+
+     <!-- Tabela para exibir equipamentos registrados -->
+     <h3>Equipamentos Registrados</h3>
+     <table id="equipamentosTable">
+         <thead>
+             <tr>
+                 <th>ID</th>
+                 <th>Nome</th>
+                 <th>Preço</th>
+                 <th>Quantidade</th>
+                 <th>Categoria</th>
+                 <th>Ações</th>
+             </tr>
+         </thead>
+         <tbody></tbody>
+     </table>
+ </section>
+
+     <!-- Seção de Perfil -->
+     <section id="perfil" class="content hidden">
+        <h2>Perfil</h2>
+        <form id="updatePerfilForm">
+            <input type="text" name="nome" placeholder="Nome">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="password" name="senha" placeholder="Nova Senha">
+            <button type="button" onclick="updatePerfil()">Atualizar</button>
+        </form>
+    </section>
+</main>
+
+    <script src="../../backEnd/Atendente.js"></script>
+</body>
+</html>

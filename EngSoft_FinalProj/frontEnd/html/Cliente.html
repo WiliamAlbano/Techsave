@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHSAVE</title>
+    <link rel="stylesheet" href="../css/Cliente.css">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="logo">TECHSAVE</span>
+        <ul class="menu">
+            <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('historico')">Histórico</a></li>
+            <li><a href="#" onclick="showSection('equipamentos')">Equipamentos</a></li>
+            <li><a href="#" onclick="showSection('editar-perfil')">Editar Perfil</a></li>
+        </ul>
+        <button class="logout">SAIR</button>
+    </nav>
+    
+    <section id="home" class="content">
+        <div class="banner">ELEVANDO SEUS DISPOSITIVOS, ECONOMIZANDO SEU DINHEIRO</div>
+        <table class="status-table">
+            <thead>
+                <tr>
+                    <th>LOCALIZAÇÃO</th>
+                    <th>SOLICITADOR</th>
+                    <th>EQUIPAMENTO</th>
+                    <th>PREÇO</th>
+                    <th>DATA DE SOLICITAÇÃO</th>
+                    <th>DATA DE REALIZAÇÃO</th>
+                    <th>STATUS</th>
+                    <th>SERVICE</th>
+                </tr>
+            </thead>
+            <tbody id="solicitacoes-table-body">
+                <!-- Solicitações serão carregadas aqui -->
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="historico" class="content" style="display: none;">
+        <h2>Histórico</h2>
+        <div class="tabela-solicitacoes">
+            <h3>Tabela de Solicitações Concluídas</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>LOCALIZAÇÃO</th>
+                        <th>SOLICITADOR</th>
+                        <th>EQUIPAMENTO</th>
+                        <th>TÉCNICO</th>
+                        <th>DATA DE SOLICITAÇÃO</th>
+                        <th>DATA DE REALIZAÇÃO</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody id="historico-table-body">
+                    <!-- Histórico de solicitações será carregado aqui -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <section id="equipamentos" class="content" style="display: none;">
+        <h2>Equipamentos</h2>
+        <div class="filtros">
+            <select id="search-categoria">
+                <option value="">Selecione uma categoria</option>
+            </select>
+            <input type="number" id="min-price" placeholder="Preço mínimo">
+            <input type="number" id="max-price" placeholder="Preço máximo">
+            <button onclick="filtrarEquipamentos()">Filtrar</button>
+        </div>
+        <div class="equipamentos-container" id="equipamentos-container">
+            <!-- Equipamentos serão carregados aqui -->
+        </div>
+
+        <div id="detalhes-equipamento" class="detalhes-modal" style="display: none;">
+            <!-- Os detalhes do equipamento serão carregados aqui -->
+        </div>
+        
+    </section>
+    
+    <section id="editar-perfil" class="content" style="display: none;">
+        <h2>Editar Perfil</h2>
+        <form id="editar-perfil-form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="contacto">Contacto:</label>
+            <input type="text" id="contacto" name="contacto" required>
+            <label for="password">Nova Senha:</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </section>
+    
+    <script src="../../backEnd/Cliente.js"></script>
+    </body>
+    </html>

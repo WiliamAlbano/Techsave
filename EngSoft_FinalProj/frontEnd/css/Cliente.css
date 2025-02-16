@@ -1,0 +1,376 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #373B3E;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #373B3E;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.menu a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #BAEAFF;
+}
+
+.menu a:hover {
+    color: #BAEAFF;
+}
+
+.logout {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    background-color: #b90a0a;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.banner {
+    background-color: #373B3E;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+}
+
+th, td {
+    border: 1px solid #C3CFD5;
+    padding: 10px;
+    text-align: left;
+    color: #373B3E;
+}
+
+th {
+    background-color: #BAEAFF;
+    color: #373B3E;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* Estilos para os cartões de equipamentos */
+.equipamentos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.equipamento-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+.equipamento-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.equipamento-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #373B3E;
+}
+
+.equipamento-card button {
+    background-color: #BAEAFF;
+    color: #373B3E;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.equipamento-card button:hover {
+    background-color: #9CD7F2;
+}
+
+/* Estilos para o formulário de edição de perfil */
+#editar-perfil-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#editar-perfil-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #373B3E;
+}
+
+#editar-perfil-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #747D82;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#editar-perfil-form button {
+    background-color: #BAEAFF;
+    color: #373B3E;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+#editar-perfil-form button:hover {
+    background-color: #9CD7F2;
+}
+
+/* Estilos para os filtros */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filtros input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 150px;
+}
+
+.filtros button {
+    background-color: #6b6bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.filtros button:hover {
+    background-color: #5a5ae6;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .logout {
+        margin-top: 10px;
+    }
+
+    .equipamentos-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .filtros {
+        flex-direction: column;
+    }
+
+    .filtros input, .filtros button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .equipamento-card h3 {
+        font-size: 16px;
+    }
+
+    .equipamento-card button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #editar-perfil-form {
+        padding: 15px;
+    }
+
+    #editar-perfil-form input {
+        font-size: 12px;
+    }
+
+    #editar-perfil-form button {
+        font-size: 14px;
+    }
+}
+/* Estilos para o modal de detalhes */
+.detalhes-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    text-align: center;
+}
+
+.detalhes-modal h2 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.detalhes-modal p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Botão de fechar */
+.detalhes-modal button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.detalhes-modal button:hover {
+    background-color: #e65a5a;
+}
+
+/* Overlay escuro ao fundo */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+#search-categoria {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Quando passa o mouse */
+#search-categoria:hover {
+    border-color: #6b6bff;
+}
+
+/* Quando está focado (selecionado) */
+#search-categoria:focus {
+    outline: none;
+    border-color: #5a5ae6;
+    box-shadow: 0 0 5px rgba(107, 107, 255, 0.5);
+}
+
+/* Estiliza as opções dentro do select */
+#search-categoria option {
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+    #search-categoria {
+        font-size: 14px;
+        padding: 8px;
+        max-width: 100%;
+    }
+}

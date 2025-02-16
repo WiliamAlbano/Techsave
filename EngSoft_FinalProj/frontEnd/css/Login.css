@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Fonte Inter */
+    height: 100vh;
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 50px;
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    top: 20px; /* Ajuste da posição para cima */
+    left: 20px; /* Ajuste da posição para a esquerda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px; /* Borda arredondada */
+    padding: 10px 20px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.left {
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.left h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700; /* Fonte em negrito */
+}
+
+.subtitle {
+    font-size: 300px; /* Aumente este valor para 65px */
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.right {
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.right h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700; /* Fonte em negrito */
+}
+
+.login-form, .signup-form {
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.login-form input, .signup-form input, .login-form button, .signup-form button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700; /* Fonte em negrito para os inputs e botões */
+}
+
+.login-form input, .signup-form input {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.login-form button, .signup-form button {
+    border: none;
+    cursor: pointer;
+}
+
+.login-form .login-button, .signup-form .signup-button {
+    background-color: #00f;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.login-form .create-button {
+    background-color: #333;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.signup-form a, .login-form a {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700; /* Fonte em negrito para os links */
+}
+
+.signup-form a:hover, .login-form a:hover {
+    text-decoration: underline;
+}

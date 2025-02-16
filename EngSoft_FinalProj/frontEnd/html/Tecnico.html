@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnico - TechSave</title>
+    <link rel="stylesheet" href="../css/Tecnico.css">
+</head>
+<body onload="carregarVendasFeitas()">
+    <nav class="navbar">
+        <span class="logo">TECHSAVE</span>
+        <ul class="menu">
+            <li><a href="#" class="active" onclick="showSection('vendas-feitas')">Vendas Feitas</a></li>
+        </ul>
+        <button class="logout" onclick="logout()">SAIR</button>
+    </nav>
+
+    <section id="vendas-feitas" class="content">
+        <h2>Lista de Vendas Feitas</h2>
+        <table class="status-table">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Email</th>
+                    <th>Equipamento</th>
+                    <th>Preço</th>
+                    <th>Atendente</th>
+                    <th>Data de Agendamento</th>
+                    <th>Localização</th>
+                    <th>Data de Montagem</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="vendas-tabela">
+                <!-- As vendas serão carregadas aqui via JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="../../backEnd/Tecnico.js"></script>
+</body>
+</html>
